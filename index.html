@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HPG TAX ERP - Master Administration</title>
+    <meta name="description" content="HPG Secure Tax and Loan Management Portal">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Courier+Prime:wght@400;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+            color: #000000;
+        }
+        .font-typewriter {
+            font-family: 'Courier Prime', monospace;
+        }
+        .font-signature {
+            font-family: 'Dancing Script', cursive;
+        }
+        .paper-khaki {
+            background-color: #f3efd9 !important;
+            background-image: url("https://www.transparenttextures.com/patterns/parchment.png");
+        }
+        
+        /* Custom Scrollbar */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+
+        /* Checkmark Animation */
+        @keyframes draw-check {
+          0% { stroke-dashoffset: 100; }
+          100% { stroke-dashoffset: 0; }
+        }
+        .animate-draw-check {
+          stroke-dasharray: 100;
+          stroke-dashoffset: 100;
+          animation: draw-check 0.6s ease-in-out forwards;
+        }
+
+        /* Improved Rubber Stamp Effect */
+        .rubber-stamp {
+            display: inline-block;
+            padding: 8px 15px;
+            color: #27272a; 
+            border: 4px solid #27272a;
+            text-transform: uppercase;
+            font-weight: 800;
+            text-align: center;
+            opacity: 0.8;
+            transform: rotate(-12deg);
+            position: relative;
+            font-family: 'Courier Prime', monospace;
+            filter: url(#grunge);
+            mix-blend-mode: multiply;
+        }
+        
+        .rubber-stamp-circular {
+            width: 100px;
+            height: 100px;
+            border: 4px double #27272a;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 8px;
+            line-height: 1;
+            text-align: center;
+            font-weight: 900;
+            transform: rotate(15deg);
+            filter: url(#grunge);
+            mix-blend-mode: multiply;
+            opacity: 0.85;
+            background: transparent;
+        }
+
+        @media print {
+            body { 
+                background: white !important; 
+                padding: 0 !important; 
+                margin: 0 !important;
+            }
+            .no-print { display: none !important; }
+            * {
+                color: black !important;
+                border-color: black !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            @page {
+                size: A4;
+                margin: 0;
+            }
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3"
+  }
+}
+</script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <!-- SVG Grunge Filter for Real Stamp Look -->
+    <svg style="position: absolute; width: 0; height: 0;">
+      <filter id="grunge">
+        <feTurbulence type="fractalNoise" baseFrequency="0.15" numOctaves="3" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+      </filter>
+    </svg>
+</body>
+</html>
